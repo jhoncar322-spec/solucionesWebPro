@@ -1,0 +1,42 @@
+IMPORTANTE: CÓMO GUARDAR TU IMAGEN PARA EL SLIDESHOW
+
+═══════════════════════════════════════════════════════════
+
+PASO 1: GUARDAR LA IMAGEN QUE ME MOSTRASTE
+
+1. Haz click derecho en la imagen del técnico con microscopio
+2. Selecciona "Guardar imagen como..."
+3. Guárdala EXACTAMENTE con este nombre: mi-trabajo.jpg
+4. Guárdala en: C:\xampp\htdocs\pagina\
+
+Debe quedar: C:\xampp\htdocs\pagina\mi-trabajo.jpg
+
+═══════════════════════════════════════════════════════════
+
+PASO 2: VERIFICAR QUE ESTÁ EN EL LUGAR CORRECTO
+
+Abre la carpeta: C:\xampp\htdocs\pagina\
+
+Debes ver estos archivos:
+- index.html
+- styles.css
+- script.js  
+- mi-trabajo.jpg  ←── TU NUEVA IMAGEN AQUÍ
+
+═══════════════════════════════════════════════════════════
+
+PASO 3: RECARGAR LA PÁGINA
+
+1. Recarga la página (F5 o Ctrl + R)
+2. Espera 10 segundos
+3. Tu imagen debería aparecer en posición #3
+
+═══════════════════════════════════════════════════════════
+
+SI SIGUE SIN VERSE:
+
+Es posible que las imágenes de Unsplash estén bloqueadas.
+Si solo ves el fondo azul, necesitamos descargar las imágenes 
+o usar una alternativa.
+
+Avísame si después de guardar mi-trabajo.jpg sigue sin verse.

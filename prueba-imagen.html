@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prueba de Imagen</title>
+    <style>
+        body {
+            background: #000;
+            color: white;
+            font-family: Arial;
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            border: 3px solid lime;
+        }
+        .test {
+            margin: 20px 0;
+            padding: 20px;
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 PRUEBA DE IMAGEN</h1>
+    
+    <div class="test">
+        <h2>Prueba 1: mi-trabajo.png</h2>
+        <img src="mi-trabajo.png" alt="Imagen PNG">
+        <p>Si ves la imagen arriba con borde verde = FUNCIONA</p>
+    </div>
+    
+    <div class="test">
+        <h2>Prueba 2: mi-trabajo.jpg</h2>
+        <img src="mi-trabajo.jpg" alt="Imagen JPG">
+        <p>Si ves la imagen arriba con borde verde = FUNCIONA</p>
+    </div>
+    
+    <div class="test">
+        <h2>Prueba 3: Background PNG</h2>
+        <div style="width: 400px; height: 300px; background-image: url('mi-trabajo.png'); background-size: cover; border: 3px solid yellow;"></div>
+        <p>Si ves la imagen de fondo arriba con borde amarillo = FUNCIONA PARA SLIDESHOW</p>
+    </div>
+    
+    <h3>📋 INSTRUCCIONES:</h3>
+    <ul>
+        <li>Si NO ves ninguna imagen = El archivo no está en la carpeta correcta</li>
+        <li>Si ves imagen en Prueba 1 = Renombra a .png</li>
+        <li>Si ves imagen en Prueba 2 = Renombra a .jpg</li>
+        <li>Si ves Prueba 3 = El slideshow debería funcionar</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,60 @@
+╔════════════════════════════════════════════════════════════╗
+║    INSTRUCCIONES PARA SUBIR A INFINITYFREE                ║
+╚════════════════════════════════════════════════════════════╝
+
+📁 ARCHIVOS A SUBIR:
+   ✓ index.html
+   ✓ styles.css
+   ✓ script.js
+
+⚙️ PASOS PARA SUBIR:
+
+1. ACCEDE A TU PANEL DE INFINITYFREE
+   → Inicia sesión en: https://infinityfree.net/
+   → Ve a "Control Panel" (Panel de Control)
+
+2. OPCIÓN A - FILE MANAGER (MÁS FÁCIL):
+   → Click en "File Manager" o "Online File Manager"
+   → Navega a la carpeta "htdocs"
+   → ELIMINA el archivo "index.html" que viene por defecto
+   → Click en "Upload" (Subir)
+   → Selecciona y sube estos 3 archivos:
+      • index.html
+      • styles.css
+      • script.js
+   → ¡Listo! Tu sitio estará en: tu-dominio.epizy.com
+
+3. OPCIÓN B - FILEZILLA (MÁS PROFESIONAL):
+   → Abre FileZilla
+   → Ve a "Archivo" → "Gestor de sitios"
+   → Click en "Nuevo sitio"
+   → Configura:
+      Protocolo: FTP
+      Servidor: [Tu servidor FTP de InfinityFree]
+      Usuario: [Tu usuario FTP]
+      Contraseña: [Tu contraseña FTP]
+   → Click en "Conectar"
+   → En el panel derecho, navega a "htdocs"
+   → Arrastra los 3 archivos desde tu carpeta local
+   → ¡Listo!
+
+📌 NOTAS IMPORTANTES:
+   • Los archivos DEBEN ir dentro de la carpeta "htdocs"
+   • NO dentro de subcarpetas
+   • Elimina el index.html por defecto de InfinityFree
+   • Asegúrate de subir los 3 archivos
+
+🌐 TU SITIO ESTARÁ DISPONIBLE EN:
+   → http://tu-subdominio.epizy.com
+   → O el dominio personalizado que hayas configurado
+
+⏱️ TIEMPO DE PROPAGACIÓN:
+   → Inmediato si usas File Manager
+   → 5-10 minutos si usas FTP
+
+═══════════════════════════════════════════════════════════
+
+¿Problemas? Verifica:
+   ✓ Que los archivos estén en "htdocs" (no en subcarpetas)
+   ✓ Que los nombres sean exactos (minúsculas)
+   ✓ Que hayas eliminado el index.html por defecto

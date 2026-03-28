@@ -1,0 +1,79 @@
+╔════════════════════════════════════════════════════════════╗
+║    CÓMO SUBIR TU IMAGEN AL SLIDESHOW                      ║
+╚════════════════════════════════════════════════════════════╝
+
+📸 IMAGEN: La foto del técnico con el microscopio reparando
+
+✅ PASO 1: GUARDAR LA IMAGEN
+   → Guarda la imagen en tu PC con el nombre EXACTO: mi-trabajo.jpg
+   → Importante: Debe ser "mi-trabajo.jpg" (todo en minúsculas)
+
+✅ PASO 2: COPIAR A TU CARPETA LOCAL (PARA PROBAR)
+   → Copia "mi-trabajo.jpg" a: C:\xampp\htdocs\pagina\
+   → Debe quedar junto a index.html, styles.css, script.js
+   → Abre index.html en tu navegador para verla en el slideshow
+
+✅ PASO 3: SUBIR AL SERVIDOR DE INFINITYFREE
+   1. Ve a: https://dash.infinityfree.net/
+   2. Inicia sesión
+   3. Click en "Administrar" en tu dominio
+   4. Click en "File Manager" o "Gestor de archivos"
+   5. Navega a la carpeta "htdocs"
+   6. Click en "Subir" o "Upload"
+   7. Selecciona "mi-trabajo.jpg" desde tu PC
+   8. Espera a que termine de subir
+   9. ¡Listo!
+
+✅ PASO 4: VERIFICAR
+   → Ve a tu sitio: http://solucioneswebpro.wuaze.com
+   → Espera a que el slideshow llegue a tu imagen (posición #3)
+   → Debería aparecer después de la segunda imagen
+
+═══════════════════════════════════════════════════════════
+
+🎨 PERSONALIZACIÓN:
+
+Si quieres cambiar el nombre de la imagen:
+1. Abre index.html
+2. Busca: mi-trabajo.jpg
+3. Reemplaza por: tu-nombre-preferido.jpg
+4. Sube la imagen con ese nombre exacto al servidor
+
+═══════════════════════════════════════════════════════════
+
+📊 TU SLIDESHOW AHORA TIENE:
+   
+   1. 💻 Desarrollo web
+   2. ⌨️ Programación
+   3. 🔬 TU IMAGEN - Reparación con microscopio ⭐ NUEVA
+   4. 💻 Reparación de laptop 1
+   5. 🔧 Reparación de laptop 2
+   6. 💻 Laptop abierta/Hardware
+   7. 📱 Reparación de móviles
+   8. 📷 Cámaras de seguridad
+   9. 🔧 Reparación técnica
+   10. 🛠️ Herramientas de reparación
+   11. 📡 Instalación de sistemas
+   12. 🛠️ Servicio técnico
+   13. 🔒 Seguridad
+   14. 📲 Smartphones
+   15. 💡 Tecnología
+
+   TOTAL: 15 IMÁGENES
+
+═══════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE:
+   
+   ✓ El nombre debe ser exactamente: mi-trabajo.jpg
+   ✓ Todo en minúsculas
+   ✓ Formato JPG (o .png si prefieres, pero cambia en el código)
+   ✓ Tamaño recomendado: máximo 2MB para carga rápida
+
+═══════════════════════════════════════════════════════════
+
+💡 CONSEJOS:
+
+• Si la imagen se ve oscura, puedes ajustar el overlay en styles.css
+• Si quieres que aparezca primero, mueve la línea al principio
+• Puedes agregar más fotos tuyas siguiendo el mismo formato
