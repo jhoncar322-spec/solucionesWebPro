@@ -284,13 +284,26 @@ function obtenerSaludoPorHora() {
     return 'Buenas noches';
 }
 
+function clienteYaSaludo(texto) {
+    const normalizado = texto
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .trim();
+
+    return /^(hola|buenos dias|buen dia|buenas tardes|buenas noches)\b/.test(normalizado);
+}
+
 function actualizarVistaPreviaWhatsapp() {
     if (!waPreview) return;
 
     const consulta = waConsultaInput ? waConsultaInput.value.trim() : '';
     const saludo = obtenerSaludoPorHora();
     const ejemploConsulta = consulta || 'necesito un cambio de pantalla para Samsung A50';
-    waPreview.textContent = `Ejemplo de envio: ${saludo}, ${ejemploConsulta}`;
+    const ejemploFinal = clienteYaSaludo(ejemploConsulta)
+        ? ejemploConsulta
+        : `${saludo}, ${ejemploConsulta}`;
+    waPreview.textContent = `Ejemplo de envio: ${ejemploFinal}`;
 }
 
 function detectarCategoriaConsulta(texto) {
@@ -332,7 +345,9 @@ if (waConsultaInput && sendCustomWhatsappBtn) {
         const _categoriaInterna = categoria;
 
         const saludo = obtenerSaludoPorHora();
-        const mensaje = `${saludo}, ${consulta}`;
+        const mensaje = clienteYaSaludo(consulta)
+            ? consulta
+            : `${saludo}, ${consulta}`;
         const urlWhatsapp = `https://wa.me/${telefonoWhatsapp}?text=${encodeURIComponent(mensaje)}`;
 
         window.open(urlWhatsapp, '_blank');
