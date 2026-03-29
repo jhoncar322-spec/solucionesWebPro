@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 📝 EDITABLE: Cambia el título de la pestaña del navegador -->
     <title>Mis Servicios Profesionales</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260328-2145">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -41,7 +41,7 @@
             <!-- ⌨️ Programación -->
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=80');"></div>            <!-- 🔬 TU IMAGEN - Reparación con microscopio -->
             <!-- Prueba 1: PNG -->
-            <div class="slide" style="background-image: url('mi-trabajo.png');"></div>
+            <div class="slide" style="background-image: url('mi-trabajo.png?v=20260328-2145');"></div>
             <!-- Prueba 2: JPG - Si PNG no funciona, renombra tu archivo a .jpg y descomenta esta línea -->
             <!-- <div class="slide" style="background-image: url('mi-trabajo.jpg');"></div> -->            <!-- � Reparación de laptop 1 -->
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=1920&q=80');"></div>
@@ -106,6 +106,25 @@
                                     <a href="#contacto" class="servicio-boton">Solicita tu demo gratis</a>
                                 </div>
                                 <!-- FIN NUEVA TARJETA DESTACADA -->
+                <div class="servicio-card">
+                    <div class="icon-box">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Servicio a Domicilio</h3>
+                    <p>Llevamos accesorios para celulares y servicio técnico hasta tu hogar o negocio, con atención rápida y confiable.</p>
+                    <ul style="margin-top:10px; text-align:left; display:inline-block;">
+                        <li>• Entrega de accesorios</li>
+                        <li>• Diagnóstico y reparación básica en sitio</li>
+                        <li>• Recolección y entrega de equipos</li>
+                    </ul>
+                    <div class="wa-consulta-box">
+                        <label for="waConsulta">Escribe tu consulta:</label>
+                        <textarea id="waConsulta" rows="3" placeholder="Ejemplo: necesito cambio de pantalla para Samsung y entrega de cargador"></textarea>
+                        <button type="button" class="servicio-boton whatsapp-card-btn" id="sendCustomWhatsapp">
+                            <i class="fab fa-whatsapp"></i> Enviar consulta por WhatsApp
+                        </button>
+                    </div>
+                </div>
                 <div class="servicio-card">
                     <div class="icon-box">
                         <i class="fas fa-paint-brush"></i>
@@ -432,8 +451,11 @@
                         <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <form class="contacto-form" id="contactForm">
-                <form class="contacto-form" id="contactForm" action="contacto.php" method="POST">
+                <form class="contacto-form" id="contactForm" action="https://formsubmit.co/celusistemas2723@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde solucionesWebPro">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://jhoncar322-spec.github.io/solucionesWebPro/index.html?enviado=1#contacto">
                     <div class="form-group">
                         <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required>
                     </div>
@@ -472,6 +494,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260328-2145"></script>
 </body>
 </html>

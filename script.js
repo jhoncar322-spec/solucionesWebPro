@@ -74,26 +74,29 @@ window.addEventListener('scroll', () => {
 // Formulario de contacto
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Obtener valores
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const asunto = document.getElementById('asunto').value;
-    const mensaje = document.getElementById('mensaje').value;
-    
-    // Validación básica
-    if (nombre && email && asunto && mensaje) {
-        // Aquí puedes agregar la lógica para enviar el formulario
-        // Por ejemplo, usando fetch() para enviar a un servidor
-        
-        alert('¡Gracias por tu mensaje! Te contactaré pronto.');
-        contactForm.reset();
-    } else {
-        alert('Por favor, completa todos los campos.');
-    }
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        // Si usa FormSubmit en GitHub Pages, permitir envio normal.
+        const usaFormSubmit = contactForm.action.includes('formsubmit.co');
+        if (usaFormSubmit) {
+            return;
+        }
+
+        e.preventDefault();
+
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const asunto = document.getElementById('asunto').value;
+        const mensaje = document.getElementById('mensaje').value;
+
+        if (nombre && email && asunto && mensaje) {
+            alert('¡Gracias por tu mensaje! Te contactaré pronto.');
+            contactForm.reset();
+        } else {
+            alert('Por favor, completa todos los campos.');
+        }
+    });
+}
 
 // Animación de aparición al hacer scroll
 const observerOptions = {
@@ -268,3 +271,46 @@ portafolioItems.forEach((item, index) => {
     item.style.transition = `all 0.6s ease ${index * 0.1}s`;
     observer.observe(item);
 });
+
+// ==================== WHATSAPP CONSULTA PERSONALIZADA ====================
+const waConsultaInput = document.getElementById('waConsulta');
+const sendCustomWhatsappBtn = document.getElementById('sendCustomWhatsapp');
+
+function detectarCategoriaConsulta(texto) {
+    const textoNormalizado = texto
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+
+    const palabrasAccesorios = /(accesorio|cargador|cable|audifono|manos libres|funda|estuche|templado|vidrio|bocina|bluetooth|soporte)/;
+    const palabrasTecnico = /(tecnico|servicio tecnico|reparacion|reparar|diagnostico|pantalla|bateria|pin de carga|software|formateo|no enciende|no prende|falla)/;
+
+    const esAccesorios = palabrasAccesorios.test(textoNormalizado);
+    const esTecnico = palabrasTecnico.test(textoNormalizado);
+
+    if (esAccesorios && esTecnico) return 'Accesorios + Servicio Tecnico';
+    if (esAccesorios) return 'Accesorios';
+    if (esTecnico) return 'Servicio Tecnico';
+    return 'Consulta General';
+}
+
+if (waConsultaInput && sendCustomWhatsappBtn) {
+    sendCustomWhatsappBtn.addEventListener('click', () => {
+        const consulta = waConsultaInput.value.trim();
+
+        if (!consulta) {
+            alert('Escribe tu consulta antes de enviar a WhatsApp.');
+            waConsultaInput.focus();
+            return;
+        }
+
+        const telefonoWhatsapp = '573229538931';
+        const categoria = detectarCategoriaConsulta(consulta);
+        const mensaje = `Hola, quiero consultar por servicio a domicilio.\n` +
+            `Categoria detectada: ${categoria}\n` +
+            `Consulta: ${consulta}`;
+        const urlWhatsapp = `https://wa.me/${telefonoWhatsapp}?text=${encodeURIComponent(mensaje)}`;
+
+        window.open(urlWhatsapp, '_blank');
+    });
+}

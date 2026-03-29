@@ -299,6 +299,54 @@ body {
     box-shadow: 0 4px 16px rgba(57, 115, 244, 0.25);
 }
 
+.whatsapp-card-btn {
+    margin-top: 1rem;
+    background: #25D366;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.wa-consulta-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.wa-consulta-box label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.wa-consulta-box textarea {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 0.75rem;
+    resize: vertical;
+    min-height: 86px;
+    font-family: inherit;
+}
+
+.wa-consulta-box textarea:focus {
+    outline: none;
+    border-color: #25D366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.2);
+}
+
+.wa-consulta-box .whatsapp-card-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.whatsapp-card-btn:hover {
+    background: #1da851;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.45);
+}
+
 /* Sección Sobre Mí */
 .sobre-mi {
     padding: 5rem 0;
