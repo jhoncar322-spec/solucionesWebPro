@@ -306,9 +306,11 @@ if (waConsultaInput && sendCustomWhatsappBtn) {
 
         const telefonoWhatsapp = '573229538931';
         const categoria = detectarCategoriaConsulta(consulta);
-        const mensaje = `Hola, quiero consultar por servicio a domicilio.\n` +
-            `Categoria detectada: ${categoria}\n` +
-            `Consulta: ${consulta}`;
+
+        // Deteccion interna (silenciosa): no mostrar categoria al cliente.
+        const _categoriaInterna = categoria;
+
+        const mensaje = consulta;
         const urlWhatsapp = `https://wa.me/${telefonoWhatsapp}?text=${encodeURIComponent(mensaje)}`;
 
         window.open(urlWhatsapp, '_blank');
