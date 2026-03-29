@@ -275,6 +275,23 @@ portafolioItems.forEach((item, index) => {
 // ==================== WHATSAPP CONSULTA PERSONALIZADA ====================
 const waConsultaInput = document.getElementById('waConsulta');
 const sendCustomWhatsappBtn = document.getElementById('sendCustomWhatsapp');
+const waPreview = document.getElementById('waPreview');
+
+function obtenerSaludoPorHora() {
+    const hora = new Date().getHours();
+    if (hora < 12) return 'Buenos dias';
+    if (hora < 19) return 'Buenas tardes';
+    return 'Buenas noches';
+}
+
+function actualizarVistaPreviaWhatsapp() {
+    if (!waPreview) return;
+
+    const consulta = waConsultaInput ? waConsultaInput.value.trim() : '';
+    const saludo = obtenerSaludoPorHora();
+    const ejemploConsulta = consulta || 'necesito un cambio de pantalla para Samsung A50';
+    waPreview.textContent = `Ejemplo de envio: ${saludo}, ${ejemploConsulta}`;
+}
 
 function detectarCategoriaConsulta(texto) {
     const textoNormalizado = texto
@@ -295,6 +312,10 @@ function detectarCategoriaConsulta(texto) {
 }
 
 if (waConsultaInput && sendCustomWhatsappBtn) {
+    actualizarVistaPreviaWhatsapp();
+
+    waConsultaInput.addEventListener('input', actualizarVistaPreviaWhatsapp);
+
     sendCustomWhatsappBtn.addEventListener('click', () => {
         const consulta = waConsultaInput.value.trim();
 
@@ -310,7 +331,8 @@ if (waConsultaInput && sendCustomWhatsappBtn) {
         // Deteccion interna (silenciosa): no mostrar categoria al cliente.
         const _categoriaInterna = categoria;
 
-        const mensaje = consulta;
+        const saludo = obtenerSaludoPorHora();
+        const mensaje = `${saludo}, ${consulta}`;
         const urlWhatsapp = `https://wa.me/${telefonoWhatsapp}?text=${encodeURIComponent(mensaje)}`;
 
         window.open(urlWhatsapp, '_blank');
