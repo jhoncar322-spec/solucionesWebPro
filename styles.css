@@ -334,12 +334,6 @@ body {
     box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.2);
 }
 
-.wa-preview {
-    color: #4b5563;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
 .wa-consulta-box .whatsapp-card-btn {
     width: 100%;
     display: inline-flex;
@@ -1027,4 +1021,135 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--secondary-color);
+}
+
+/* =====================================================
+   Catálogo de Accesorios a Domicilio
+   ===================================================== */
+.accesorios-catalogo {
+    padding: 5rem 0;
+    background: #eef2ff;
+}
+
+.accesorios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.accesorio-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.10);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.accesorio-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 14px 36px rgba(37, 99, 235, 0.20);
+}
+
+.accesorio-imagen {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.accesorio-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.accesorio-card:hover .accesorio-imagen img {
+    transform: scale(1.07);
+}
+
+.accesorio-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #ef4444;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.accesorio-badge-verde {
+    background: #22c55e;
+}
+
+.accesorio-info {
+    padding: 1.2rem 1.3rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.accesorio-nombre {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 0.4rem;
+}
+
+.accesorio-descripcion {
+    font-size: 0.88rem;
+    color: #6b7280;
+    line-height: 1.45;
+    margin-bottom: 0.9rem;
+    flex: 1;
+}
+
+.accesorio-precio {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.9rem;
+}
+
+.accesorio-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #25d366;
+    color: #ffffff;
+    padding: 0.65rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.accesorio-btn:hover {
+    background: #128c7e;
+    transform: scale(1.03);
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .accesorios-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+
+    .accesorio-imagen {
+        height: 150px;
+    }
+
+    .accesorio-precio {
+        font-size: 1.2rem;
+    }
 }

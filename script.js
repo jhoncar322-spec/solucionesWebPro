@@ -275,36 +275,6 @@ portafolioItems.forEach((item, index) => {
 // ==================== WHATSAPP CONSULTA PERSONALIZADA ====================
 const waConsultaInput = document.getElementById('waConsulta');
 const sendCustomWhatsappBtn = document.getElementById('sendCustomWhatsapp');
-const waPreview = document.getElementById('waPreview');
-
-function obtenerSaludoPorHora() {
-    const hora = new Date().getHours();
-    if (hora < 12) return 'Buenos dias';
-    if (hora < 19) return 'Buenas tardes';
-    return 'Buenas noches';
-}
-
-function clienteYaSaludo(texto) {
-    const normalizado = texto
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .trim();
-
-    return /^(hola|buenos dias|buen dia|buenas tardes|buenas noches)\b/.test(normalizado);
-}
-
-function actualizarVistaPreviaWhatsapp() {
-    if (!waPreview) return;
-
-    const consulta = waConsultaInput ? waConsultaInput.value.trim() : '';
-    const saludo = obtenerSaludoPorHora();
-    const ejemploConsulta = consulta || 'necesito un cambio de pantalla para Samsung A50';
-    const ejemploFinal = clienteYaSaludo(ejemploConsulta)
-        ? ejemploConsulta
-        : `${saludo}, ${ejemploConsulta}`;
-    waPreview.textContent = `Ejemplo de envio: ${ejemploFinal}`;
-}
 
 function detectarCategoriaConsulta(texto) {
     const textoNormalizado = texto
@@ -325,10 +295,6 @@ function detectarCategoriaConsulta(texto) {
 }
 
 if (waConsultaInput && sendCustomWhatsappBtn) {
-    actualizarVistaPreviaWhatsapp();
-
-    waConsultaInput.addEventListener('input', actualizarVistaPreviaWhatsapp);
-
     sendCustomWhatsappBtn.addEventListener('click', () => {
         const consulta = waConsultaInput.value.trim();
 
@@ -344,10 +310,7 @@ if (waConsultaInput && sendCustomWhatsappBtn) {
         // Deteccion interna (silenciosa): no mostrar categoria al cliente.
         const _categoriaInterna = categoria;
 
-        const saludo = obtenerSaludoPorHora();
-        const mensaje = clienteYaSaludo(consulta)
-            ? consulta
-            : `${saludo}, ${consulta}`;
+        const mensaje = consulta;
         const urlWhatsapp = `https://wa.me/${telefonoWhatsapp}?text=${encodeURIComponent(mensaje)}`;
 
         window.open(urlWhatsapp, '_blank');
